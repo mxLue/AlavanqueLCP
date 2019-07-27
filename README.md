@@ -1,1 +1,1 @@
-# AlavanqueLCP
+# AlavanqueGoT

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Alavanque</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="timer.jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link rel="stylesheet" href="custom.css">
+
+  <link rel="shortcut icon" href="https://http2.mlstatic.com/painel-casa-da-moeda-la-casa-de-papel-140x100mts-D_NQ_NP_783736-MLB27961724955_082018-F.jpg">
+
+    
+    </head>
+    <body>
+
+        
+		<div class=" divTime row container center-align"  >
+            <h1 id="timerDiv" class=" white-text center-align">00:00:00</h1>
+		</div>  
+
+        	<div class="container row center-align white-text"> 
+      
+
+
+
+            <div class=" col l12">
+
+
+
+            
+            <div class="col l1  push-l4">
+     		     Horas
+            <input class="input-field white-text center-align" type="number" id="h" value="0" min="0" max="60">
+            </div>
+            
+            <div class="col l1  push-l4">
+            Minutos
+            <input class="input-field white-text center-align" type="number" value="0" min="0" max="60" id="m">
+            </div>
+
+            
+            <div class="col l1  push-l4">
+             Segundos
+            <input  class="input-field white-text  center-align " type="number" min="0" max="60" value="0" id="s">
+            </div>
+
+            <div class="col l1  push-l4">
+             Milésimo
+            <input class="input-field white-text center-align" type="number" id="h" value="0" min="0" max="60">
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+            <div class="row center-align">
+              <div class="">
+                  <button type="button" class="btn waves-effect waves-lights grey lighten-4 black-text" onclick="empezar()">INICIAR</button>
+                      </div>  
+            </div>
+
+<script>
+audio = new Audio("alarme2.mp3"); 
+function empezar(){
+   audio.pause();
+   audio.currentTime = 0;
+  $('#timerDiv').timer('remove');
+  $('#timerDiv').timer({
+    countdown: true,
+    duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+    callback: function() {  
+        audio.addEventListener('ended', function() {
+    this.currentTime = 0;
+//    this.play();
+}, false);
+        audio.play();
+    },
+    format: '%H:%M:%S'  
+});
+    }
+</script>
+
+	    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-74824848-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+	    
+    </body>
+</html>
+

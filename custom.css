@@ -1,0 +1,29 @@
+@font-face {
+ 	font-family: coluna;
+    src: url('Coluna.otf')
+}
+
+.divt{
+	 	 text-align: center;
+	border: double;
+	 font-family: coluna;
+  	border-style: solid;
+	 border-color: white;
+	 font-size: 60px;
+	 width: 568px;
+ 	 height: 100px;
+
+}
+
+.divTime{
+	
+	 font-family: coluna;
+	 font-size: 20px;
+
+
+}
+
+body{
+	background-image: url("wp2358444.png");
+	left: 100px
+}
